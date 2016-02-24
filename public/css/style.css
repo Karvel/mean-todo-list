@@ -1,0 +1,6 @@
+.hover-btn {
+    display: none;
+}
+.close-btn:hover .hover-btn {
+    display: block;
+}
