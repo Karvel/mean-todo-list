@@ -1,18 +1,21 @@
-angular.module('todoApp', []);
+angular.module('todoApp', [
+    'items'
+]);
 
 angular.module('todoApp')
-  .controller('itemCtrl', itemCtrl)
+  .controller('mainCtrl', mainCtrl)
   .config($stateProvider => {
       $stateProvider
         .state('todo', {
           url: '/todo',
-          controller: 'itemCtrl',
-          templateUrl: 'todoApp/todo.html',
+          controller: 'mainCtrl',
+          templateUrl: 'todoApp/items.tmpl.html',
+        //   templateUrl: 'todoApp/todo.html',
           controllerAs: 'todo'
         });
   });
 
-  function itemCtrl($scope, $http) {
+  function mainCtrl($scope, $http) {
       $scope.items = [
           {id: "0", name: "First"},
           {id: "1", name: "Second"},
@@ -59,7 +62,7 @@ angular.module('todoApp')
               return b.id == item.id;
           });
       };//end scope.deleteItem
-  }//end itemCtrl.controller
+  }//end mainCtrl.controller
 //
 // function WelcomeCtrl() {
 //   this.message = 'Bitwise Says Hello.';
