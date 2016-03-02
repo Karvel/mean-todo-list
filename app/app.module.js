@@ -8,6 +8,7 @@ angular.module('app', [
         $stateProvider
             .state('todoApp', {
                 url: '',
+                controller: 'mainCtrl',
                 abstract: true
             });
         $urlRouterProvider.otherwise('/todo');

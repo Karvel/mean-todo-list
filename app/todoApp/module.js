@@ -8,7 +8,7 @@ angular.module('todoApp')
       $stateProvider
         .state('todo', {
           url: '/todo',
-          controller: 'mainCtrl',
+          controller: 'ItemsCtrl as itemsCtrl',
           templateUrl: 'todoApp/items.tmpl.html',
         //   templateUrl: 'todoApp/todo.html',
           controllerAs: 'todo'
@@ -16,12 +16,6 @@ angular.module('todoApp')
   });
 
   function mainCtrl($scope, $http) {
-      $scope.items = [
-          {id: "0", name: "First"},
-          {id: "1", name: "Second"},
-          {id: "2", name: "Third"}
-      ];//end scope.items
-
       //CRUD
       function resetAddItem() {
           $scope.newItem = {
@@ -63,7 +57,3 @@ angular.module('todoApp')
           });
       };//end scope.deleteItem
   }//end mainCtrl.controller
-//
-// function WelcomeCtrl() {
-//   this.message = 'Bitwise Says Hello.';
-// }

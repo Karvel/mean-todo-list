@@ -6,16 +6,17 @@ angular.module('items', [
     .config(function($stateProvider) {
         $stateProvider
             .state('todoApp.items', {
-                url: '/todo',
+                url: '/',
                 views: {
                     'items@': {
-                        controller: 'itemsCtrl',
+                        controller: 'ItemsCtrl as itemsCtrl',
                         templateUrl: 'app/todoApp/items.tmpl.html'
                     }
                 }
             });
     })
-    .controller('itemsCtrl', function itemsCtrl($scope) {
-
+    .controller('ItemsCtrl', function ItemsCtrl(ItemsModel) {
+        var itemsCtrl = this;
+        itemsCtrl.items = ItemsModel.getItems();
     })
 ;
